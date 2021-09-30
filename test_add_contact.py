@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+import unittest
 
 class TestAddContact(unittest.TestCase):
     def setUp(self):
@@ -16,8 +15,6 @@ class TestAddContact(unittest.TestCase):
         dv = self.dv
         dv.get("http://localhost/addressbook/edit.php")
         dv.find_element_by_name("user").click()
-        dv.find_element_by_name("user").click()
-        dv.find_element_by_name("user").clear()
         dv.find_element_by_name("user").send_keys("admin")
         dv.find_element_by_name("pass").click()
         # ERROR: Caught exception [ERROR: Unsupported command [doubleClick | name=pass | ]]
