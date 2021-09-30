@@ -6,6 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest
 
+
 class TestAddContact(unittest.TestCase):
     def setUp(self):
         self.dv = webdriver.Firefox()
@@ -13,14 +14,16 @@ class TestAddContact(unittest.TestCase):
     
     def test_add_contact(self):
         dv = self.dv
-        dv.get("http://localhost/addressbook/edit.php")
-        dv.find_element_by_name("user").click()
-        dv.find_element_by_name("user").send_keys("admin")
-        dv.find_element_by_name("pass").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [doubleClick | name=pass | ]]
-        dv.find_element_by_name("pass").clear()
-        dv.find_element_by_name("pass").send_keys("secret")
-        dv.find_element_by_xpath("//input[@value='Login']").click()
+        self.open_page(dv)
+        self.login(dv)
+        self.add_contact(dv)
+        self.logout(dv)
+
+    def logout(self, dv):
+        dv.find_element_by_link_text("Logout").click()
+
+    def add_contact(self, dv):
+        # fill form
         dv.find_element_by_name("theform").click()
         dv.find_element_by_name("firstname").click()
         dv.find_element_by_name("firstname").clear()
@@ -75,9 +78,20 @@ class TestAddContact(unittest.TestCase):
         dv.find_element_by_name("phone2").click()
         dv.find_element_by_name("phone2").clear()
         dv.find_element_by_name("phone2").send_keys("khad")
+        # submit contact
         dv.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        dv.find_element_by_link_text("Logout").click()
-    
+
+    def login(self, dv):
+        dv.find_element_by_name("user").click()
+        dv.find_element_by_name("user").send_keys("admin")
+        dv.find_element_by_name("pass").click()
+        dv.find_element_by_name("pass").clear()
+        dv.find_element_by_name("pass").send_keys("secret")
+        dv.find_element_by_xpath("//input[@value='Login']").click()
+
+    def open_page(self, dv):
+        dv.get("http://localhost/addressbook/edit.php")
+
     def is_element_present(self, how, what):
         try: self.dv.find_element(by=how, value=what)
         except NoSuchElementException as e: return False
