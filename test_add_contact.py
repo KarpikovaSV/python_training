@@ -17,7 +17,7 @@ class TestAddContact(unittest.TestCase):
         dv = self.dv
         self.open_page(dv)
         self.login(dv, username="admin", password="secret")
-        self.add_contact(dv, Contact(firstname="Svetlana", middlename="khsdks", lastname="KKKKKK", nickname="Nick", Company="Compa", titlen="Title", address="Add", mobile="+75656567676",
+        self.add_contact(dv, Contact(firstname="Svetlana3", middlename="khsdks", lastname="KKKKKK", nickname="Nick", Company="Compa", titlen="Title", address="Add", mobile="+75656567676",
                          homephone="+76565656767", mail="gdesveta@noya.ru", bday="26", bmouth="August", byear="1990", address2="addr", notes="hkda", phone2="khad"))
         self.logout(dv)
 
@@ -56,17 +56,14 @@ class TestAddContact(unittest.TestCase):
         dv.find_element_by_name("home").click()
         dv.find_element_by_name("home").clear()
         dv.find_element_by_name("home").send_keys(contact.homephone)
-        dv.find_element_by_xpath("//div[@id='content']/form/label[14]").click()
         dv.find_element_by_name("email").click()
         dv.find_element_by_name("email").clear()
         dv.find_element_by_name("email").send_keys(contact.mail)
         dv.find_element_by_name("theform").click()
         dv.find_element_by_name("bday").click()
         Select(dv.find_element_by_name("bday")).select_by_visible_text(contact.bday)
-        dv.find_element_by_xpath("//option[@value='26']").click()
         dv.find_element_by_name("bmonth").click()
         Select(dv.find_element_by_name("bmonth")).select_by_visible_text(contact.bmouth)
-        dv.find_element_by_xpath("//option[@value='August']").click()
         dv.find_element_by_name("byear").click()
         dv.find_element_by_name("byear").clear()
         dv.find_element_by_name("byear").send_keys(contact.byear)
