@@ -70,16 +70,6 @@ class Aplication:
         # submit contact
         dv.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
-    def login(self, username, password):
-        dv = self.dv
-        self.open_page()
-        dv.find_element_by_name("user").click()
-        dv.find_element_by_name("user").send_keys(username)
-        dv.find_element_by_name("pass").click()
-        dv.find_element_by_name("pass").clear()
-        dv.find_element_by_name("pass").send_keys(password)
-        dv.find_element_by_xpath("//input[@value='Login']").click()
-
     def open_page(self):
         dv = self.dv
         dv.get("http://localhost/addressbook/edit.php")
@@ -100,3 +90,12 @@ class Aplication:
     def destroy(self):
         self.dv.quit()
 
+    def login(self, username, password):
+        dv = self.dv
+        self.open_page()
+        dv.find_element_by_name("user").click()
+        dv.find_element_by_name("user").send_keys(username)
+        dv.find_element_by_name("pass").click()
+        dv.find_element_by_name("pass").clear()
+        dv.find_element_by_name("pass").send_keys(password)
+        dv.find_element_by_xpath("//input[@value='Login']").click()
