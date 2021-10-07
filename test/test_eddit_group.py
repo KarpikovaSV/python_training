@@ -1,5 +1,4 @@
 from model.group import Group
-import time
 
 
 def test_eddit_group(app):
