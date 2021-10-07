@@ -62,3 +62,4 @@ class ContactHelper:
         wd.find_element_by_name("phone2").send_keys(contact.phone2)
         # submit contact
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+
