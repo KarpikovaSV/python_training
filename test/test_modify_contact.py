@@ -8,7 +8,7 @@ def test_modify_contact_name(app):
                                  homephone="+70065656767", mail="editeditgdesveta@noya.ru", bday="15", bmonth="August",
                                  byear="1990", address2="addr", notes="hkda", phone2="khad"))
     app.contact.modify_first_contact(Contact(firstname="New 57558658Svettt"))
-    app.open_home_page()
+ #   app.open_home_page()
 
 
 def test_modify_contact_title(app):
@@ -18,4 +18,3 @@ def test_modify_contact_title(app):
                                   homephone="+70065656767", mail="editeditgdesveta@noya.ru", bday="15", bmonth="August",
                                   byear="1990", address2="addr", notes="hkda", phone2="khad"))
     app.contact.modify_first_contact(Contact(title="New title"))
-    app.open_home_page()

@@ -8,4 +8,3 @@ def test_del_contact(app):
                                  homephone="+70065656767", mail="editeditgdesveta@noya.ru", bday="15", bmonth="August",
                                  byear="1990", address2="addr", notes="hkda", phone2="khad"))
     app.contact.delete_first_contact()
-    app.open_home_page()
