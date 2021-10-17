@@ -21,13 +21,6 @@ class ContactHelper:
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
 
-    def eddit_contact(self, contact):
-        wd = self.app.wd
-        self.app.open_home_page()
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
-        self.fill_contact(contact)
-        wd.find_element_by_xpath("//div[@id='content']/form/input[22]").click()
-
     def count_contact(self):
         wd = self.app.wd
         self.app.open_home_page()
