@@ -75,9 +75,10 @@ class ContactHelper:
         self.app.open_home_page()
         contacts = []
         for element in wd.find_elements_by_name("entry"):
-            text = element.find_element_by_xpath(".//td[3]").text
+            firstname = element.find_element_by_xpath(".//td[3]").text
+            lastname = element.find_element_by_xpath(".//td[2]").text
             id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contact(firstname=text, id=id))
+            contacts.append(Contact(firstname=firstname, id=id, lastname=lastname))
         return contacts
 
     def select_xpa(self, field_name, text):
