@@ -40,6 +40,7 @@ testdata = [
 for i in range(2)
 ]
 
+
 @pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
 def test_add_contact(app, contact):
     old_contacts = app.contact.get_contact_list()
