@@ -2,9 +2,11 @@ from model.group import Group
 from random import randrange
 
 
-def test_modify_group_name(app):
+def test_modify_group_name(app, json_groups):
     if app.group.count() == 0:
-        app.group.create(header="jnjhn", name="bjbjjhh", footer="nm")
+        group = json_groups
+        app.group.create(group)
+        #app.group.create(header="jnjhn", name="bjbjjhh", footer="nm")
     old_groups = app.group.get_group_list()
     index = randrange(len(old_groups))
     group = Group(name="New group")

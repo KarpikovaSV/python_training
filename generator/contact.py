@@ -54,7 +54,7 @@ testdata = [
             bday=random_bday(), bmonth="August", byear="1990",
             address2=random_string("address2", 20), notes=random_string("notes", 20),
             secondaryphone=random_tel(11))
-            for i in range(5)
+            # for i in range(5)
 ]
 
 file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)

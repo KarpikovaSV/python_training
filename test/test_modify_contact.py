@@ -2,12 +2,14 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_modify_contact_name(app):
+def test_modify_contact_name(app, json_contacts):
     if app.contact.count_contact() == 0:
-        app.contact.add(Contact(firstname="Svetlana", middlename="Editkh", lastname="ghhjhjygy", nickname="1234567gxs",
-                                Company="Compa56", title="Titlehsjah", address="EditAddshgdsb", mobilephone="+75656567600",
-                                homephone="+70065656767", email="editeditgdesveta@noya.ru", bday="15", bmonth="August",
-                                byear="1990", address2="addr", notes="hkda", secondaryphone="khad"))
+        contact = json_contacts
+        app.contact.add(contact)
+        # app.contact.add(Contact(firstname="Svetlana", middlename="Editkh", lastname="ghhjhjygy", nickname="1234567gxs",
+        #                         Company="Compa56", title="Titlehsjah", address="EditAddshgdsb", mobilephone="+75656567600",
+        #                         homephone="+70065656767", email="editeditgdesveta@noya.ru", bday="15", bmonth="August",
+        #                         byear="1990", address2="addr", notes="hkda", secondaryphone="khad"))
     old_contacts = app.contact.get_contact_list()
     index = randrange(len(old_contacts))
     contact = Contact(firstname="New 57558658Svettt")
