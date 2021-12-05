@@ -40,7 +40,9 @@ class Application:
     def open_page(self):
         wd = self.wd
         if not (wd.current_url.endswith("/edit.php") and len(wd.find_elements_by_name("photo"))) > 0:
-            wd.get("http://localhost/addressbook/edit.php")
+            #wd.get("http://localhost/addressbook/edit.php")
+            bu = self.base_url
+            wd.get(bu + "/edit.php")
 
     def is_element_present(self, how, what):
         try:
