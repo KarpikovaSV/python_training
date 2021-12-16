@@ -2,7 +2,7 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_modify_contact_name(app, json_contacts):
+def test_modify_contact_name(app, db, json_contacts):
     if app.contact.count_contact() == 0:
         contact = json_contacts
         app.contact.add(contact)
@@ -10,15 +10,17 @@ def test_modify_contact_name(app, json_contacts):
         #                         Company="Compa56", title="Titlehsjah", address="EditAddshgdsb", mobilephone="+75656567600",
         #                         homephone="+70065656767", email="editeditgdesveta@noya.ru", bday="15", bmonth="August",
         #                         byear="1990", address2="addr", notes="hkda", secondaryphone="khad"))
-    old_contacts = app.contact.get_contact_list()
+    old_contacts = db.get_contact_list()
     index = randrange(len(old_contacts))
+    old_contact = old_contacts[index]
     contact = Contact(firstname="New 57558658Svettt")
-    contact.id = old_contacts[index].id
-    app.contact.modify_contact_by_index(index, contact)
+    contact.id = old_contact.id
+    app.contact.modify_contact_by_id(old_contact.id, contact)
     assert len(old_contacts) == app.contact.count()
-    new_contacts = app.contact.get_contact_list()
-#   contact.lastname = old_contacts[0].lastname
-    old_contacts[index].firstname = contact.firstname
+    new_contacts = db.get_contact_list()
+    contact.lastname = old_contacts[0].lastname
+    #old_contacts[index].firstname = contact.firstname
+    old_contacts[index] = contact
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
 
