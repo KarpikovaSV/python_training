@@ -4,7 +4,7 @@ import random
 from random import randrange
 
 
-def test_del_contact(app, db, json_contacts):
+def test_del_contact(app, db, json_contacts, check_ui):
     if app.contact.count_contact() == 0:
         contact = json_contacts
         app.contact.add(contact)
@@ -22,3 +22,6 @@ def test_del_contact(app, db, json_contacts):
     old_contacts.remove(contact)
     #old_contacts[index:index+1] = []
     assert old_contacts == new_contacts
+    if check_ui:
+        assert sorted(new_contacts, key=Contact.id_or_max) == sorted(app.contact.get_contact_list(), key=Contact.id_or_max)
+
