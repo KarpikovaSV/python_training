@@ -34,6 +34,10 @@ class ContactHelper:
         #wd.find_elements_by_name("selected[]")[index].click()
         wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
 
+    def select_contact_by_select_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//input[@value='%s']" % id).click()
+
     def select_contact_by_id(self, id):
         wd = self.app.wd
         #wd.find_elements_by_name("selected[]")[index].click()
@@ -78,6 +82,17 @@ class ContactHelper:
         self.fill_contact(new_contact_data)
         # submit modification
         wd.find_element_by_name("update").click()
+        self.contact_cache = None
+
+    def add_contact_by_id_to_group(self, id, id_group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_select_id(id)
+        # select group
+        wd.find_element_by_name("to_group").click()
+        Select(wd.find_element_by_name("to_group")).select_by_value(id_group)
+        #self.find_element_by_xpath("//div[@id='content']/form[2]/div[4]/select/option[18]").click()
+        wd.find_element_by_name("add").click()
         self.contact_cache = None
 
     def select_first_contact(self):
