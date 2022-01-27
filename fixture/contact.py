@@ -194,6 +194,22 @@ class ContactHelper:
         secondaryphone = re.search("P: (.*)", text).group(1)
         return Contact(homephone=homephone, workphone=workphone, mobilephone=mobilephone, secondaryphone=secondaryphone)
 
+    def del_contact_by_id_in_group(self, id, id_group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        # тут посмотреть название крутежка
+        wd.find_element_by_name("group").click()
+        # тут выбор группы по id
+        Select(wd.find_element_by_name("group")).select_by_value(id_group)
+        # выбор контакта
+        self.select_contact_by_select_id(id)
+        wd.find_element_by_name("remove").click()
+        self.contact_cache = None
+
+    def select_group_by_select_id(self, id):
+        wd = self.app.wd
+        # переписать поиск группы из крутежка по id
+        wd.find_element_by_xpath("//input[@value='%s']" % id).click()
 
 
 
