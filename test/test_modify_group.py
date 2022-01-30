@@ -3,11 +3,11 @@ from random import randrange
 import random
 
 
-def test_modify_group_name(app, db, json_groups, check_ui):
+def test_modify_group_name(app, db, check_ui):
     if app.group.count() == 0:
-        group = json_groups
-        db.create(group)
-        #app.group.create(header="jnjhn", name="bjbjjhh", footer="nm")
+        #group = json_groups
+        #app.group.create(group)
+        app.group.create(Group(header="jnjhn", name="bjbjjhh", footer="nm"))
     old_groups = db.get_group_list()
     index = randrange(len(old_groups))
     old_group = old_groups[index]
