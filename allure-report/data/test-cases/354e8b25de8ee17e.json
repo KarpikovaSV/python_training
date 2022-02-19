@@ -1,0 +1,239 @@
+{
+  "uid" : "354e8b25de8ee17e",
+  "name" : "test_add_group[None:nameThiAFNKc;headerAyvAGDrLnJgiDHuJ;footerGRjYU]",
+  "fullName" : "test.test_add_group#test_add_group",
+  "historyId" : "c47fea76c952e75cc090d869b456a5bd",
+  "time" : {
+    "start" : 1645306851233,
+    "stop" : 1645306855591,
+    "duration" : 4358
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1645306830161,
+      "stop" : 1645306830161,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1645306830162,
+      "stop" : 1645306830196,
+      "duration" : 34
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1645306850904,
+      "stop" : 1645306851232,
+      "duration" : 328
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "check_ui",
+    "time" : {
+      "start" : 1645306851232,
+      "stop" : 1645306851232,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given a group list",
+      "time" : {
+        "start" : 1645306851233,
+        "stop" : 1645306851238,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When I add a group None:nameThiAFNKc;headerAyvAGDrLnJgiDHuJ;footerGRjYU to the list",
+      "time" : {
+        "start" : 1645306851238,
+        "stop" : 1645306855588,
+        "duration" : 4350
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new group list is equal to the old list with the add group",
+      "time" : {
+        "start" : 1645306855588,
+        "stop" : 1645306855591,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1645306864791,
+      "stop" : 1645306864791,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1645306864791,
+      "stop" : 1645306865550,
+      "duration" : 759
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_group"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro-Svetlana.local"
+  }, {
+    "name" : "thread",
+    "value" : "58301-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "json_groups",
+    "value" : "None:nameThiAFNKc;headerAyvAGDrLnJgiDHuJ;footerGRjYU"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "58dd83d6bb9c5961",
+      "status" : "passed",
+      "time" : {
+        "start" : 1645306097013,
+        "stop" : 1645306101279,
+        "duration" : 4266
+      }
+    }, {
+      "uid" : "bb65971705ed65cb",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1645305791491,
+        "stop" : 1645305791491,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "46ea87ff1f67247c",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1645305582852,
+        "stop" : 1645305582852,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "e78711c7217ab2b7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1645302470869,
+        "stop" : 1645302475131,
+        "duration" : 4262
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "354e8b25de8ee17e.json",
+  "parameterValues" : [ "None:nameThiAFNKc;headerAyvAGDrLnJgiDHuJ;footerGRjYU" ]
+}
